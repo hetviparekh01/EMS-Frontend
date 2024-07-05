@@ -1,0 +1,34 @@
+<div class="container mt-5">
+    <div class="card">
+      <div class="card-header">
+        <h4>Add Event</h4>
+      </div>
+      <div class="card-body">
+        <form [formGroup]="eventForm" (ngSubmit)="onSubmit()">
+          <div class="mb-3">
+            <label for="name" class="form-label">Event Name</label>
+            <input type="text" id="name" class="form-control" required  formControlName="name">
+          </div>
+          <div class="mb-3">
+            <label for="location" class="form-label">Location</label>
+            <input type="text" id="location" class="form-control" required formControlName="location">
+          </div>
+          <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+            <textarea id="description" class="form-control" required formControlName="description"></textarea>
+          </div>
+          <div class="mb-3">
+            <label for="fees" class="form-label">Event Fees</label>
+            <input type="number" id="fees" class="form-control" required formControlName="fees">
+          </div>
+          <div class="mb-3">
+            <label for="date" class="form-label">Event Date</label>
+            <input type="date" id="date" class="form-control" required formControlName="date">
+          </div>
+          <button type="submit" class="btn btn-primary my-2" [hidden]="isUpdate">Add User</button>
+    <button type="submit" class="btn btn-warning my-2 me-2" [hidden]="isSubmit">Update </button>
+    <button type="button" class="btn btn-secondary my-2" [hidden]="isSubmit" (click)="eventForm.reset()">Cancel</button>
+        </form>
+      </div>
+    </div>
+  </div>

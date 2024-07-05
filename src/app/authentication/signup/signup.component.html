@@ -1,0 +1,61 @@
+<form [formGroup]="signupform" (ngSubmit)="onSubmit()">
+    <div class="d-flex justify-content-center align-items-center full-height">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h1 class="card-title text-center">Signup</h1>
+                    <div class="mb-3">
+                        <label for="" class="form-label">Name</label>
+                        <input type="text" class="form-control" name="" id="" aria-describedby="helpId" placeholder=""
+                            [ngClass]="{ 'is-invalid': signupform.get('name')?.invalid && (signupform.get('name')?.touched||signupform.get('name')?.dirty), 'is-valid':signupform.get('name')?.valid}" formControlName="name" />
+                        <div *ngIf="signupform.get('name')?.invalid && (signupform.get('name')?.touched||signupform.get('name')?.dirty)"
+                            class="text-danger">
+                            <span *ngIf="signupform.get('name')?.errors?.['required']">
+                                Name is required
+                            </span>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="" class="form-label">Email</label>
+                        <input type="text" class="form-control" name="" id="" aria-describedby="helpId" placeholder=""
+                            [ngClass]="{ 'is-invalid': signupform.get('email')?.invalid && (signupform.get('email')?.touched||signupform.get('email')?.dirty), 'is-valid':signupform.get('email')?.valid}" formControlName="email" />
+                        <div *ngIf="signupform.get('email')?.invalid && (signupform.get('email')?.touched||signupform.get('email')?.dirty)"
+                            class="text-danger">
+                            <span *ngIf="signupform.get('email')?.errors?.['required']">
+                                Email is required
+                            </span>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="" class="form-label">Password</label>
+                        <input type="text" class="form-control" name="" id="" aria-describedby="helpId" placeholder=""  formControlName="password" 
+                        [ngClass]="{'is-invalid':signupform.get('password')?.invalid&& (signupform.get('password')?.touched||signupform.get('password')?.dirty),'is-valid':signupform.get('password')?.valid}"/>
+                        <div *ngIf="signupform.get('password')?.invalid&&(signupform.get('password')?.touched||signupform.get('password')?.dirty)" class="text-danger">
+                            <span *ngIf="signupform.get('password')?.errors?.['required']">
+                                password is required
+                            </span>
+                        </div>
+                    </div>
+                    <div class=" mb-3">
+                        <div class="form-group">
+                            <label for="roleSelect">Select Role</label>
+                            <select class="form-control" id="roleSelect" formControlName="role">
+                                <option value="" disabled selected>Select Role</option>
+                                <option value="user">User</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center mb-3">
+                        <button type="submit" class="btn btn-primary w-auto">
+                            SignUp
+                        </button>
+                    </div>
+                    <div class="row mt-3">
+                        <p>Back to <a routerLink="/auth/login">Login</a></p>
+                    </div>
+                </div>
+    
+            </div>
+        </div>
+    
+    </form>
+

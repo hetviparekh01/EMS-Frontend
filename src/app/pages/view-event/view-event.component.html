@@ -1,0 +1,14 @@
+<div class="container mt-5">
+    <div class="card">
+      <div class="card-header">
+        <h4>{{ event?.name }}</h4>
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">Location: {{ event?.location }}</h5>
+        <p class="card-text">Description: {{ event?.description }}</p>
+        <p class="card-text">Date: {{ event?.date | date }}</p>
+        <p class="card-text">Event Fee: {{ event?.fees |currency }}</p>
+        <button class="btn btn-primary" (click)="register()">Register</button>
+      </div>
+    </div>
+  </div>    

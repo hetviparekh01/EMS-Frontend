@@ -1,0 +1,9 @@
+<button type="button" class="btn btn-info mx-2" (click)="viewBtn()">
+    View
+</button>
+<button type="button" class="btn btn-warning mx-2" (click)="updateBtn()" *ngIf="role !=='user'">
+    Update
+</button>
+<button type="button" class="btn btn-danger mx-2" (click)="deleteBtn()" *ngIf="role !=='user'">
+    Delete
+</button>
