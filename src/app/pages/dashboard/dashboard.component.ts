@@ -22,6 +22,7 @@ export class DashboardComponent implements OnInit {
     { headerName: 'Description', field: 'description', flex: 3 },
     { headerName: 'Fees', field: 'fees', flex: 2 },
     { headerName: 'Date', field: 'date', flex: 2 },
+    { headerName: 'Total Registered User', field: 'totalUser', flex: 2 },
     {
       headerName: '',
       field: '',
